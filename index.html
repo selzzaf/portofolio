@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salma Afroukh - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SA</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" data-lang-fr="Accueil" data-lang-en="Home">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-lang-fr="À propos" data-lang-en="About">À propos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link" data-lang-fr="Compétences" data-lang-en="Skills">Compétences</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link" data-lang-fr="Projets" data-lang-en="Projects">Projets</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-lang-fr="Contact" data-lang-en="Contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <button class="theme-toggle" onclick="toggleTheme()" title="Changer le thème">
+                        <i class="fas fa-sun light-icon"></i>
+                        <i class="fas fa-moon dark-icon"></i>
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button class="language-toggle" onclick="toggleLanguage()">
+                        <span class="lang-text" data-lang-fr="EN" data-lang-en="FR">EN</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="greeting" data-lang-fr="Bonjour, je suis" data-lang-en="Hello, I'm">Bonjour, je suis</span>
+                    <span class="name">Salma Afroukh</span>
+                </h1>
+                <p class="hero-subtitle" data-lang-fr="Étudiante en informatique et réseaux" data-lang-en="Computer Science & Networks Student">
+                    Étudiante en informatique et réseaux
+                </p>
+                <p class="hero-description" data-lang-fr="Passionnée par le développement logiciel et les nouvelles technologies" data-lang-en="Passionate about software development and new technologies">
+                    Passionnée par le développement logiciel et les nouvelles technologies
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary" data-lang-fr="Voir mes projets" data-lang-en="View my projects">
+                        Voir mes projets
+                    </a>
+                    <a href="#contact" class="btn btn-secondary" data-lang-fr="Me contacter" data-lang-en="Contact me">
+                        Me contacter
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="code-animation">
+                    <div class="code-line">const developer = {</div>
+                    <div class="code-line">  name: "Salma Afroukh",</div>
+                    <div class="code-line">  passion: "Coding",</div>
+                    <div class="code-line">  skills: ["Web Dev", "Python", "Java"]</div>
+                    <div class="code-line">};</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-lang-fr="À propos de moi" data-lang-en="About Me">À propos de moi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p data-lang-fr="Étudiante en 1re année du cycle ingénieur à l'EMSI, spécialisée en informatique et réseaux, je suis passionnée par le développement logiciel. Curieuse, rigoureuse et dotée de solides compétences en programmation." data-lang-en="First-year engineering student at EMSI, specialized in computer science and networks, I am passionate about software development. Curious, rigorous and equipped with solid programming skills.">
+                        Étudiante en 1re année du cycle ingénieur à l'EMSI, spécialisée en informatique et réseaux, je suis passionnée par le développement logiciel. Curieuse, rigoureuse et dotée de solides compétences en programmation.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label" data-lang-fr="Projets" data-lang-en="Projects">Projets</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label" data-lang-fr="Langages" data-lang-en="Languages">Langages</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label" data-lang-fr="Années" data-lang-en="Years">Années</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-lang-fr="Compétences" data-lang-en="Skills">Compétences</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 data-lang-fr="Langages de programmation" data-lang-en="Programming Languages">Langages de programmation</h3>
+                    <div class="skill-items">
+                        <div class="skill-item skill-mastered">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-item skill-mastered">
+                            <i class="fas fa-code"></i>
+                            <span>C++</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>C</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>VB.Net</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 data-lang-fr="Frameworks Back-end" data-lang-en="Back-end Frameworks">Frameworks Back-end</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <span>Spring Boot</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Flask</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Django</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-laravel"></i>
+                            <span>Laravel</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 data-lang-fr="Front-end" data-lang-en="Front-end">Front-end</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML/CSS/JS</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-java"></i>
+                            <span>Java Swing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3 data-lang-fr="Bases de données" data-lang-en="Databases">Bases de données</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>SQLite3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-fire"></i>
+                            <span>Firebase</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-lang-fr="Mes Projets" data-lang-en="My Projects">Mes Projets</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-lang-fr="Application de location de voiture" data-lang-en="Car Rental Application">Application de location de voiture</h3>
+                        <p data-lang-fr="Développement d'une plateforme web permettant la réservation et la gestion de véhicules en ligne avec Laravel." data-lang-en="Development of a web platform for online vehicle reservation and management with Laravel.">
+                            Développement d'une plateforme web permettant la réservation et la gestion de véhicules en ligne avec Laravel.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-lang-fr="Clonage de Reddit" data-lang-en="Reddit Clone">Clonage de Reddit</h3>
+                        <p data-lang-fr="Développement d'un réseau social avec back-end Express.js, base de données PostgreSQL, et interface utilisateur React." data-lang-en="Development of a social network with Express.js backend, PostgreSQL database, and React user interface.">
+                            Développement d'un réseau social avec back-end Express.js, base de données PostgreSQL, et interface utilisateur React.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-lang-fr="Application de chat" data-lang-en="Chat Application">Application de chat</h3>
+                        <p data-lang-fr="Développement d'une application chat desktop en temps réel avec Java Swing, Spring Boot et Firebase." data-lang-en="Development of a real-time desktop chat application with Java Swing, Spring Boot and Firebase.">
+                            Développement d'une application chat desktop en temps réel avec Java Swing, Spring Boot et Firebase.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Java Swing</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-lang-fr="Immotech : Gestion immobilière" data-lang-en="Immotech: Real Estate Management">Immotech : Gestion immobilière</h3>
+                        <p data-lang-fr="Application web de gestion immobilière avec Flask (back-end), MongoDB (NoSQL) et interface en HTML/CSS/JS avec templates Jinja2." data-lang-en="Real estate management web application with Flask (back-end), MongoDB (NoSQL) and HTML/CSS/JS interface with Jinja2 templates.">
+                            Application web de gestion immobilière avec Flask (back-end), MongoDB (NoSQL) et interface en HTML/CSS/JS avec templates Jinja2.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Jinja2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-lang-fr="Contact" data-lang-en="Contact">Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 data-lang-fr="Restons en contact" data-lang-en="Let's stay in touch">Restons en contact</h3>
+                    <p data-lang-fr="N'hésitez pas à me contacter pour discuter de projets ou opportunités." data-lang-en="Don't hesitate to contact me to discuss projects or opportunities.">
+                        N'hésitez pas à me contacter pour discuter de projets ou opportunités.
+                    </p>
+                                    <div class="contact-links">
+                    <a href="mailto:afroukhselma@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>afroukhselma@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/salma-afroukh-profil" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/selzzaf" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Salma Afroukh. <span data-lang-fr="Tous droits réservés" data-lang-en="All rights reserved">Tous droits réservés</span>.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
