@@ -1,6 +1,7 @@
 // Theme and language functionality
 let currentLanguage = 'fr';
 let currentTheme = localStorage.getItem('theme') || 'light';
+let currentLang = 'fr';
 
 // Initialize theme
 document.documentElement.setAttribute('data-theme', currentTheme);
@@ -27,6 +28,7 @@ const translations = {
         'Front-end': 'Front-end',
         'Bases de données': 'Bases de données',
         'Mes Projets': 'Mes Projets',
+
         'Application de location de voiture': 'Application de location de voiture',
         'Développement d\'une plateforme web permettant la réservation et la gestion de véhicules en ligne avec Laravel.': 'Développement d\'une plateforme web permettant la réservation et la gestion de véhicules en ligne avec Laravel.',
         'Clonage de Reddit': 'Clonage de Reddit',
@@ -60,6 +62,7 @@ const translations = {
         'Front-end': 'Front-end',
         'Bases de données': 'Databases',
         'Mes Projets': 'My Projects',
+
         'Application de location de voiture': 'Car Rental Application',
         'Développement d\'une plateforme web permettant la réservation et la gestion de véhicules en ligne avec Laravel.': 'Development of a web platform for online vehicle reservation and management with Laravel.',
         'Clonage de Reddit': 'Reddit Clone',
@@ -75,9 +78,17 @@ const translations = {
 };
 
 function toggleTheme() {
-    currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    localStorage.setItem('theme', currentTheme);
+    const root = document.documentElement;
+    const currentTheme = root.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (newTheme === 'dark') {
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    }
 }
 
 function toggleLanguage() {
@@ -87,16 +98,9 @@ function toggleLanguage() {
 
 function updateLanguage() {
     // Update all elements with data-lang attributes
-    const elements = document.querySelectorAll('[data-lang-fr]');
+    const elements = document.querySelectorAll('[data-lang-' + currentLanguage + ']');
     elements.forEach(element => {
-        const frenchText = element.getAttribute('data-lang-fr');
-        const englishText = element.getAttribute('data-lang-en');
-        
-        if (currentLanguage === 'fr') {
-            element.textContent = frenchText;
-        } else {
-            element.textContent = englishText;
-        }
+        element.textContent = element.getAttribute('data-lang-' + currentLanguage);
     });
 
     // Update language toggle button
@@ -263,4 +267,167 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentTheme === 'dark') {
         navbar.style.background = 'rgba(17, 24, 39, 0.95)';
     }
-}); 
+});
+
+// Video modal functionality
+function toggleVideo(projectId) {
+    const overlay = document.getElementById(`video-${projectId}`);
+    if (overlay) {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        
+        // Auto-play video when modal opens
+        const video = overlay.querySelector('video');
+        if (video) {
+            video.currentTime = 0; // Reset video to beginning
+        }
+    }
+}
+
+function closeVideo(projectId) {
+    const overlay = document.getElementById(`video-${projectId}`);
+    if (overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+        
+        // Pause video when modal closes
+        const video = overlay.querySelector('video');
+        if (video) {
+            video.pause();
+        }
+    }
+}
+
+// Close video modal when clicking outside
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('video-overlay')) {
+        event.target.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Pause all videos
+        const videos = event.target.querySelectorAll('video');
+        videos.forEach(video => video.pause());
+    }
+});
+
+// Close video modal with Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        const activeOverlay = document.querySelector('.video-overlay.active');
+        if (activeOverlay) {
+            activeOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Pause all videos
+            const videos = activeOverlay.querySelectorAll('video');
+            videos.forEach(video => video.pause());
+        }
+    }
+});
+
+// Language switching functionality
+function switchLanguage(lang) {
+    const elements = document.querySelectorAll('[data-lang-' + lang + ']');
+    elements.forEach(element => {
+        element.textContent = element.getAttribute('data-lang-' + lang);
+    });
+    
+    // Update active language button
+    document.querySelectorAll('.language-toggle').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+}
+
+// Mobile menu functionality
+function toggleMenu() {
+    const navMenu = document.querySelector('.nav-menu');
+    navMenu.classList.toggle('active');
+}
+
+// Project Slider functionality
+let currentSlide = 1;
+const totalSlides = 4;
+
+function showSlide(slideNumber) {
+    // Hide all slides
+    document.querySelectorAll('.project-slide').forEach(slide => {
+        slide.classList.remove('active');
+    });
+    
+    // Show current slide
+    document.getElementById('slide-' + slideNumber).classList.add('active');
+    
+    // Update dots
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === slideNumber - 1);
+    });
+    
+    // Update navigation buttons
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    prevBtn.disabled = slideNumber === 1;
+    nextBtn.disabled = slideNumber === totalSlides;
+    
+    // Pause all videos
+    document.querySelectorAll('video').forEach(video => {
+        video.pause();
+    });
+}
+
+function changeSlide(direction) {
+    const newSlide = currentSlide + direction;
+    if (newSlide >= 1 && newSlide <= totalSlides) {
+        currentSlide = newSlide;
+        showSlide(currentSlide);
+    }
+}
+
+function goToSlide(slideNumber) {
+    if (slideNumber >= 1 && slideNumber <= totalSlides) {
+        currentSlide = slideNumber;
+        showSlide(currentSlide);
+    }
+}
+
+// Initialize theme from localStorage
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (savedTheme === 'dark') {
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    }
+    
+    // Set initial language
+    switchLanguage('fr');
+    
+    // Initialize slider
+    showSlide(1);
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+        changeSlide(-1);
+    } else if (event.key === 'ArrowRight') {
+        changeSlide(1);
+    }
+});
+
+function toggleLangBtn() {
+    const btn = document.getElementById('lang-btn');
+    if (currentLang === 'fr') {
+        switchLanguage('en');
+        btn.textContent = 'FR';
+        currentLang = 'en';
+    } else {
+        switchLanguage('fr');
+        btn.textContent = 'EN';
+        currentLang = 'fr';
+    }
+} 

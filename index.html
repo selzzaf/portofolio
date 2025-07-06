@@ -28,18 +28,18 @@
                 <li class="nav-item">
                     <a href="#projects" class="nav-link" data-lang-fr="Projets" data-lang-en="Projects">Projets</a>
                 </li>
+
                 <li class="nav-item">
                     <a href="#contact" class="nav-link" data-lang-fr="Contact" data-lang-en="Contact">Contact</a>
                 </li>
                 <li class="nav-item">
                     <button class="theme-toggle" onclick="toggleTheme()" title="Changer le thème">
-                        <i class="fas fa-sun light-icon"></i>
                         <i class="fas fa-moon dark-icon"></i>
                     </button>
                 </li>
                 <li class="nav-item">
-                    <button class="language-toggle" onclick="toggleLanguage()">
-                        <span class="lang-text" data-lang-fr="EN" data-lang-en="FR">EN</span>
+                    <button class="language-toggle" id="lang-btn" onclick="toggleLangBtn()">
+                        EN
                     </button>
                 </li>
             </ul>
@@ -95,20 +95,6 @@
                     <p data-lang-fr="Étudiante en 1re année du cycle ingénieur à l'EMSI, spécialisée en informatique et réseaux, je suis passionnée par le développement logiciel. Curieuse, rigoureuse et dotée de solides compétences en programmation." data-lang-en="First-year engineering student at EMSI, specialized in computer science and networks, I am passionate about software development. Curious, rigorous and equipped with solid programming skills.">
                         Étudiante en 1re année du cycle ingénieur à l'EMSI, spécialisée en informatique et réseaux, je suis passionnée par le développement logiciel. Curieuse, rigoureuse et dotée de solides compétences en programmation.
                     </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">4</span>
-                            <span class="stat-label" data-lang-fr="Projets" data-lang-en="Projects">Projets</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label" data-lang-fr="Langages" data-lang-en="Languages">Langages</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label" data-lang-fr="Années" data-lang-en="Years">Années</span>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -227,76 +213,140 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2 class="section-title" data-lang-fr="Mes Projets" data-lang-en="My Projects">Mes Projets</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-car"></i>
+            
+            <div class="project-slider">
+                <div class="slider-container">
+                    <!-- Project 1: Laravel -->
+                    <div class="project-slide active" id="slide-1">
+                        <div class="project-content-wrapper">
+                            <div class="project-video-section">
+                                <div class="video-player">
+                                    <video controls poster="images/laravel-car-rental.png">
+                                        <source src="screenrecord/VehicleRental.mp4" type="video/mp4">
+                                        Votre navigateur ne supporte pas la lecture de vidéos.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="project-info-section">
+                                <div class="project-header">
+                                    <h3 data-lang-fr="Application de Location de Voiture" data-lang-en="Car Rental Application">Application de Location de Voiture</h3>
+                                    <div class="project-number">01/04</div>
+                                </div>
+                                <p class="project-description" data-lang-fr="Découvrez en détail le développement de cette plateforme web complète de location de véhicules. Cette vidéo présente les fonctionnalités principales : système de réservation, gestion des véhicules, interface administrateur, et processus de paiement intégré." data-lang-en="Discover in detail the development of this complete web platform for vehicle rental. This video presents the main features: booking system, vehicle management, admin interface, and integrated payment process.">
+                                    Découvrez en détail le développement de cette plateforme web complète de location de véhicules. Cette vidéo présente les fonctionnalités principales : système de réservation, gestion des véhicules, interface administrateur, et processus de paiement intégré.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Laravel</span>
+                                    <span class="tech-tag">PHP</span>
+                                    <span class="tech-tag">MySQL</span>
+                                    <span class="tech-tag">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-content">
-                        <h3 data-lang-fr="Application de location de voiture" data-lang-en="Car Rental Application">Application de location de voiture</h3>
-                        <p data-lang-fr="Développement d'une plateforme web permettant la réservation et la gestion de véhicules en ligne avec Laravel." data-lang-en="Development of a web platform for online vehicle reservation and management with Laravel.">
-                            Développement d'une plateforme web permettant la réservation et la gestion de véhicules en ligne avec Laravel.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Laravel</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
+
+                    <!-- Project 2: React -->
+                    <div class="project-slide" id="slide-2">
+                        <div class="project-content-wrapper">
+                            <div class="project-video-section">
+                                <div class="video-player">
+                                    <video controls poster="images/reddit-clone.png">
+                                        <source src="screenrecord/redditclone.mp4" type="video/mp4">
+                                        Votre navigateur ne supporte pas la lecture de vidéos.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="project-info-section">
+                                <div class="project-header">
+                                    <h3 data-lang-fr="Clonage de Reddit" data-lang-en="Reddit Clone">Clonage de Reddit</h3>
+                                    <div class="project-number">02/04</div>
+                                </div>
+                                <p class="project-description" data-lang-fr="Explorez ce réseau social inspiré de Reddit développé avec les technologies modernes. La vidéo démontre les fonctionnalités sociales : création de posts, système de votes, commentaires, authentification utilisateur, et interface responsive." data-lang-en="Explore this Reddit-inspired social network developed with modern technologies. The video demonstrates social features: post creation, voting system, comments, user authentication, and responsive interface.">
+                                    Explorez ce réseau social inspiré de Reddit développé avec les technologies modernes. La vidéo démontre les fonctionnalités sociales : création de posts, système de votes, commentaires, authentification utilisateur, et interface responsive.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">PostgreSQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Java -->
+                    <div class="project-slide" id="slide-3">
+                        <div class="project-content-wrapper">
+                            <div class="project-video-section">
+                                <div class="video-player">
+                                    <video controls poster="images/chatrealtime-login.png">
+                                        <source src="screenrecord/AppChat.mp4" type="video/mp4">
+                                        Votre navigateur ne supporte pas la lecture de vidéos.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="project-info-section">
+                                <div class="project-header">
+                                    <h3 data-lang-fr="Application de Chat en Temps Réel" data-lang-en="Real-time Chat Application">Application de Chat en Temps Réel</h3>
+                                    <div class="project-number">03/04</div>
+                                </div>
+                                <p class="project-description" data-lang-fr="Découvrez cette application de chat desktop développée en Java. La vidéo présente les fonctionnalités de messagerie en temps réel, l'interface utilisateur Java Swing, l'authentification Firebase, et la gestion des conversations multiples." data-lang-en="Discover this desktop chat application developed in Java. The video presents real-time messaging features, Java Swing user interface, Firebase authentication, and multiple conversation management.">
+                                    Découvrez cette application de chat desktop développée en Java. La vidéo présente les fonctionnalités de messagerie en temps réel, l'interface utilisateur Java Swing, l'authentification Firebase, et la gestion des conversations multiples.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">Spring Boot</span>
+                                    <span class="tech-tag">Java Swing</span>
+                                    <span class="tech-tag">Firebase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Python -->
+                    <div class="project-slide" id="slide-4">
+                        <div class="project-content-wrapper">
+                            <div class="project-video-section">
+                                <div class="video-player">
+                                    <video controls poster="images/immotech-home.png">
+                                        <source src="screenrecord/Immotech.mp4" type="video/mp4">
+                                        Votre navigateur ne supporte pas la lecture de vidéos.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="project-info-section">
+                                <div class="project-header">
+                                    <h3 data-lang-fr="ImmoTech - Gestion Immobilière" data-lang-en="ImmoTech: Real Estate Management">ImmoTech - Gestion Immobilière</h3>
+                                    <div class="project-number">04/04</div>
+                                </div>
+                                <p class="project-description" data-lang-fr="Explorez cette application web de gestion immobilière complète. La vidéo démontre la gestion des propriétés, la recherche avancée, les filtres dynamiques, l'interface administrateur, et l'intégration avec MongoDB pour un stockage flexible des données." data-lang-en="Explore this complete real estate management web application. The video demonstrates property management, advanced search, dynamic filters, admin interface, and MongoDB integration for flexible data storage.">
+                                    Explorez cette application web de gestion immobilière complète. La vidéo démontre la gestion des propriétés, la recherche avancée, les filtres dynamiques, l'interface administrateur, et l'intégration avec MongoDB pour un stockage flexible des données.
+                                </p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Flask</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                    <span class="tech-tag">Jinja2</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-comments"></i>
+                <!-- Navigation Controls -->
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn" onclick="changeSlide(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="slider-dots">
+                        <span class="dot active" onclick="goToSlide(1)"></span>
+                        <span class="dot" onclick="goToSlide(2)"></span>
+                        <span class="dot" onclick="goToSlide(3)"></span>
+                        <span class="dot" onclick="goToSlide(4)"></span>
                     </div>
-                    <div class="project-content">
-                        <h3 data-lang-fr="Clonage de Reddit" data-lang-en="Reddit Clone">Clonage de Reddit</h3>
-                        <p data-lang-fr="Développement d'un réseau social avec back-end Express.js, base de données PostgreSQL, et interface utilisateur React." data-lang-en="Development of a social network with Express.js backend, PostgreSQL database, and React user interface.">
-                            Développement d'un réseau social avec back-end Express.js, base de données PostgreSQL, et interface utilisateur React.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-lang-fr="Application de chat" data-lang-en="Chat Application">Application de chat</h3>
-                        <p data-lang-fr="Développement d'une application chat desktop en temps réel avec Java Swing, Spring Boot et Firebase." data-lang-en="Development of a real-time desktop chat application with Java Swing, Spring Boot and Firebase.">
-                            Développement d'une application chat desktop en temps réel avec Java Swing, Spring Boot et Firebase.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">Spring Boot</span>
-                            <span class="tech-tag">Java Swing</span>
-                            <span class="tech-tag">Firebase</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 data-lang-fr="Immotech : Gestion immobilière" data-lang-en="Immotech: Real Estate Management">Immotech : Gestion immobilière</h3>
-                        <p data-lang-fr="Application web de gestion immobilière avec Flask (back-end), MongoDB (NoSQL) et interface en HTML/CSS/JS avec templates Jinja2." data-lang-en="Real estate management web application with Flask (back-end), MongoDB (NoSQL) and HTML/CSS/JS interface with Jinja2 templates.">
-                            Application web de gestion immobilière avec Flask (back-end), MongoDB (NoSQL) et interface en HTML/CSS/JS avec templates Jinja2.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Flask</span>
-                            <span class="tech-tag">MongoDB</span>
-                            <span class="tech-tag">Jinja2</span>
-                        </div>
-                    </div>
+                    <button class="slider-btn next-btn" onclick="changeSlide(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
