@@ -2,9 +2,9 @@
 
 ## 🌟 À propos / About
 
-Portfolio personnel de Salma Afroukh, étudiante en informatique et réseaux à l'EMSI. Ce portfolio présente mes compétences, projets et expériences en développement logiciel.
+Portfolio personnel de Salma Afroukh, étudiante en informatique et réseaux. Ce portfolio présente mes compétences, projets et expériences en développement logiciel.
 
-Personal portfolio of Salma Afroukh, computer science and networks student at EMSI. This portfolio showcases my skills, projects and experiences in software development.
+Personal portfolio of Salma Afroukh, computer science and networks student. This portfolio showcases my skills, projects and experiences in software development.
 
 ## 🚀 Fonctionnalités / Features
 
